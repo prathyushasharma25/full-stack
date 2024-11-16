@@ -1,6 +1,6 @@
-form tag--The form element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.
+## form tag--The form element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.
 
-attributes:
+# attributes:
 -type
 -placeholder
 -name
@@ -13,7 +13,7 @@ attributes:
 -required
 -value
 
-tags:
+ # tags:
 -input
 -textarea
 -button
