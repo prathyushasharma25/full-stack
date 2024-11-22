@@ -33,3 +33,25 @@ these are all called CRUD(create read update and delete) operators
 HTTP- Hypertext transfer protocol(set of instructions)
 client to server:HTTP request
 server to client:HTTP response
+
+## Iframe:--display another web page in a specific web page
+#attributes:
+-src--address to that web page
+-height--height of a iframe
+-width-- width of a iframe
+-full screen
+
+## fav icon-(icons inside the page icon)
+we will put this in inside head tag.
+tag:
+link tag
+attributes-
+-ref=icon
+-href - will place the inamge address
+
+
+## media tag
+there are two tag audiotag and video tag
+-- audio tag-- play audio songs
+attributes
+common are controls
