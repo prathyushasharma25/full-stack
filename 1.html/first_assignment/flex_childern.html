@@ -12,11 +12,6 @@
             border-radius: 10px;
             border: double 5px;
             display:flex;
-            flex-direction:row;
-            flex-wrap:wrap;
-            justify-content: center;
-           
-           align-content: space-evenly;
 
         }
         .box > div{
@@ -36,14 +31,23 @@
         .box > div:nth-child(4){
             background-color: rgb(64, 80, 32);
         }
+        .child1{
+            order: 3;
+        }
+        .child2{
+            flex-shrink: 4;
+        }
     </style>
 </head>
 <body>
     <div class="box">
-        <div>1</div>
-        <div>2</div>
+        <div class="child1">1</div>
+        <div class="child2">2</div>
         <div>3</div>
         <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
         
         
     </div>
