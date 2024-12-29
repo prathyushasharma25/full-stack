@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX_PROPERTIES</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        #navbar{
+            height:70px;
+            border-radius:2px;
+            border:solid 1px teal;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+            background-color: burlywood;
+            }
+        #links{
+            display:flex;
+            width:30%;
+            border:solid 1px green;
+            justify-content:space-between;
+            color:white;
+            text-transform: uppercase;
+            font-size:13px;
+         }
+         #links > p:hover{
+            color:red;
+            cursor:pointer;
+
+         }
+         #navbar > img{
+            padding:50px;
+            border-radius:5px;
+
+         }
+         #navbar +h1{
+            text-align:center;
+            margin-top: 80px;
+            border:solid black 1px;
+            text-transform: uppercase;
+            color:lightgreen
+        }
+        #gallery{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:space-around;
+            gap:40px;
+            width:60%;
+            margin-top:50px;
+            margin:auto;
+
+
+
+        }
+        #gallery >img{
+            width:30%;
+            border-radius:8px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="navbar">
+        <img
+        style="height:50px" src="https://tse2.mm.bing.net/th?id=OIP.Kv_2NkZGnbIe8zzqPV8ocAHaEo&pid=Api&P=0&h=180" alt="https://tse4.mm.bing.net/th?id=OIP.0KFguPTBIqm6seqw8-iREgHaEK&pid=Api&P=0&h=180">
+        <div id="links">
+            <p>Home</p>
+            <p>Gallery</p>
+            <p>About</p>
+        </div>
+    </div>
+    <h1>Photo Gallery</h1>
+     <section id="gallery"> 
+        <img src="https://tse4.mm.bing.net/th?id=OIP.0KFguPTBIqm6seqw8-iREgHaEK&pid=Api&P=0&h=180" alt="">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.Kv_2NkZGnbIe8zzqPV8ocAHaEo&pid=Api&P=0&h=180" alt="">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.0KFguPTBIqm6seqw8-iREgHaEK&pid=Api&P=0&h=180" alt="">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.Kv_2NkZGnbIe8zzqPV8ocAHaEo&pid=Api&P=0&h=180" alt="">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.0KFguPTBIqm6seqw8-iREgHaEK&pid=Api&P=0&h=180" alt="">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.Kv_2NkZGnbIe8zzqPV8ocAHaEo&pid=Api&P=0&h=180" alt="">
+    </section>
+</body>
+</html>
