@@ -1,0 +1,99 @@
+body{
+    margin:0;
+    padding:0;
+   
+
+
+}
+#navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color: whitesmoke;
+    height:70px;
+    border:solid 1px green;
+    border-radius:5px;
+
+ }
+ #links{
+    display:flex;
+    width: 60%;
+    justify-content: space-evenly;
+    font-size:15px;
+    text-transform: capitalize;
+    border: solid 1px teal;
+
+ }
+ #navbar >img{
+    height:60px;
+    padding:40px;
+    border-radius: 4px;
+ }
+ #links >p:hover{
+    color:blue;
+    cursor: pointer;
+    }
+    .row >h3{
+        text-align:left;
+        padding:8px;
+        border:solid black 1px;
+        text-transform: capitalize;
+        color:blue;
+        font-weight:bold;
+    }
+    #heading{
+        text-align:left;
+        margin_top:5px;
+        text-transform: capitalize;
+        
+    }
+    .para{
+        color: gainsboro;
+
+    }
+    .left_container{
+        display:flex;
+        align-items:center;
+        background-color: whitesmoke;
+        border-radius:5px;
+        margin-top:20px;
+        padding:10px;
+        border:1px solid teal;
+        
+        
+
+
+    }
+    .card1{
+        display: flex;
+        justify-content:right;
+        flex-wrap:wrap;
+        background-color: white;
+        border-radius: 8px;
+        padding:5px;
+        display:flex;
+        align-content:center;
+
+    }
+     .image{
+    height:30px;
+   
+    border-radius: 4px; 
+   
+   
+    margin-left:3px;
+ 
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content:left;
+        padding:8px;
+        border:1px solid teal;
+        flex-wrap:wrap;
+        margin:10px;
+    }
+    .card_content{
+       padding:3px;
+
+    }
