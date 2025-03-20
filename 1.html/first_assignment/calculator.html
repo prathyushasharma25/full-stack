@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator</title>
+    <style>
+        header{
+            text-align:center;
+            color:teal;
+            font-size:50px;
+            font-weight:bold;
+
+        }
+        #calculator{
+            padding:20px;
+            width:300px;
+            height:500px;
+            margin:auto;
+            border-radius:10px;
+            padding:50px;
+            box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 -2px 1px rgba(0,0,0,0.25);
+        }
+        #display{
+            height:60px;
+            width:100%;
+            padding:10px 10px 10px 10px;
+            border-radius:20px;
+            box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 -2px 1px rgba(0,0,0,0.25);
+            border: 2px solid black;
+            
+
+           
+        }
+        #key{
+            display:flex;
+            justify-content:space-evenly;
+            align-items:center;
+            flex-direction: row;
+            margin: 20px 10px 10px 20px;
+            padding :20px 10px 20px 20px;
+            width:250px;
+            height:30px;
+            flex-wrap:wrap;
+            background-color:smoke whitesmoke;
+           
+            
+          
+               
+        }
+        #key>h1{
+        /* color:black; */
+        /* display:flex; */
+            justify-content:center;
+            text-align:center;
+            align-items:center;
+           /* /* margin:2px; */
+           padding:2px;
+            /* border:2px solid black; */
+            width: 50px;
+            height:50px;
+            /* background-color:whitesmoke; */
+         } 
+         .black{
+            background-color: black;
+            color:white;
+
+         }
+         .red{
+            background:red;
+            color:white;
+         }
+         h1{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            
+         }
+    </style>
+</head>
+<body>
+    <header>Masai Calculator</header>
+    <section id="calculator">
+        <div id="display"></div>
+        <div id="key">
+            <h1>1</h1>
+            <h1>2</h1>
+            <h1>3</h1>
+            <h1 class="black">+</h1>
+            <h1>4</h1>
+            <h1>5</h1>
+            <h1>6</h1>
+            <h1 class="black">-</h1>
+            <h1>7</h1>
+            <h1>8</h1>
+            <h1>9</h1>
+            <h1 class="black">*</h1>
+            <h1 class="red">C</h1>
+            <h1>0</h1>
+            <h1 class="black">=</h1>
+            <h1 class="black" >/</h1>
+        </div>
+
+    </section>
+</body>
+</html>
