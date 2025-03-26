@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid_assignment2</title>
+    <style>
+        body{
+            height:100vh;
+            background-color:black;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+       .container{
+        background-color:white;
+        display:grid;
+        grid-template-columns:200px 200px 200px 200px;
+        grid-template-rows:150px 150px;
+        gap:10px;
+        grid-template-areas: "box1 box1 box2 box5"
+        "box3 box4 box2 box5";
+        width:900px;
+        height:400px;
+       } 
+       .container>div{
+        border: 1px solid red;
+        /* display:flex;
+        justify-content: center;
+        align-items:center; */
+       }
+       .item1{
+        grid-area:box1;
+        background-color:darkgray;
+        border-radius:10px;
+            margin:20px;
+            color:white;
+            font-weight: bold;
+            font-size:40px;
+            padding:20px;
+       }
+       .item2{
+        grid-area:box2;
+        background-color:darkgray;
+        border-radius:10px;
+            margin:20px;
+            color:white;
+            font-weight: bold;
+            
+            font-size:40px;
+            padding:20px;
+       }
+       .item3{
+        grid-area:box3;
+        background-color:darkgray;
+        border-radius:10px;
+            margin:20px;
+            color:white;
+            font-weight: bold;
+            
+            font-size:40px;
+            padding:20px;
+       }
+       .item4{
+        grid-area:box4;
+        background-color:darkgray;
+        border-radius:10px;
+            margin:20px;
+            color:white;
+            font-weight: bold;
+            
+            font-size:40px;
+            padding:20px;
+       }
+       .item5{
+        grid-area:box5;
+        height:250px;
+        background-color:darkgray;
+        border-radius:10px;
+            margin:20px;
+            color:white;
+            font-weight: bold;
+            
+            font-size:40px;
+            padding:20px;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1">A</div>
+        <div class="item2">B</div>
+        <div class="item3">C</div>
+        <div class="item4">D</div>
+        <div class="item5">E</div>
+    </div>
+</body>
+</html>

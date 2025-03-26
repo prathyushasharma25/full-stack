@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid_assignment4</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns: repeat(4 , 100px);
+            grid-template-rows:repeat(3 ,100px);
+            gap:20px;
+            grid-template-areas: "box1 box2 box2 box3"
+                                  "box4 box4 box5 box6"
+                                  "box7 box8 box9 box9";
+            justify-content:center;
+            margin:100px;
+                                  
+
+        }
+        .container>div{
+           
+            border:1px solid rgb(39, 120, 25);
+            background-color:teal;
+            
+            
+            
+            
+        }
+        .item1{
+            grid-area:box1;
+        }
+        .item2{
+        
+            grid-area:box2;
+        
+        }
+        .item3{
+            grid-area:box3;
+        }
+        .item4{
+            grid-area:box4;
+        }
+        .item5{
+            grid-area:box5;
+        }
+        .item6{
+            grid-area:box6;
+        }
+    
+        .item7{
+            grid-area:box7;
+        }
+    
+        .item8{
+            grid-area:box8;
+        }
+    
+        .item9{
+            grid-area:box9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1"> </div>
+        <div class="item2"> </div>
+        <div class="item3"> </div>
+        <div class="item4"> </div>
+        <div class="item5"> </div>
+        <div class="item6"> </div>
+        <div class="item7"> </div>
+        <div class="item8"> </div>
+        <div class="item9"> </div>
+    </div>
+</body>
+</html>
