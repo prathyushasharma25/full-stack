@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+       .container{
+          height:100vh;
+          display:grid;
+          grid-template-columns: 2fr 2fr;
+           grid-template-rows:  1fr 50px;
+          grid-template-areas: "image main " "footer footer" ;
+          border:1px solid black;
+          
+          
+          
+       }
+       .left{
+        display:grid;
+        grid-area:image;
+        align-items: center;
+        justify-content: center;
+        border:1px solid green;
+        background-color: navy;
+        
+       }
+       .left>img{
+        width:250px; 
+        height:200px;
+        margin:50px;
+        padding:20px;
+        
+        
+       }
+       .right{
+         display: grid;
+         grid-area: main;
+         grid-template-columns: repeat(4, 1fr);
+         grid-template-areas: "box1 box2 box3 box4";
+         border:1px solid black;
+         background-color: blue;
+         
+       }
+       .item1{
+        grid-area:box1;
+       }
+       .item2{
+        grid-area:box2;
+       }
+       .item3{
+        grid-area:box3;
+       }
+       .item4{
+        grid-area:box4;
+       }
+       .card{
+        color:white;
+        padding:10px;
+        margin:10px;
+        font-family: Arial, Helvetica, sans-serif;
+        
+       }
+       .card>h5{
+        font-size:10px;
+        font-weight:100px;
+       }
+       .footer_container{
+        background-color: #151414;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        align-content:center;
+        grid-area:footer;
+        }
+      .foot_left{
+        padding:10px;
+        margin:10px;
+        display:grid;
+        grid-template-columns:20px 350px;
+        grid-template-areas: "source details";
+        gap:20px;
+       
+      }
+      .foot_left>img{
+        width:30px;
+        height:30px;
+        
+      }
+      .details>span{
+        color: white;
+        /* font-weight:bold; */
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:12px;
+        margin:5px;
+
+      }
+      .border{
+        border:2px solid white;
+    
+      }
+      .details{
+        grid-area:details;
+      }
+      .img{
+        grid-area:source;
+      }
+      .foot_right{
+        color:white;
+        text-align: right;
+        font-size:12px;
+        margin:10px;
+        padding:10px;
+        display:grid;
+        grid-template-columns: repeat(6, auto);
+        gap:10px;
+      } 
+      .link{
+        text-transform: capitalize;
+        text-decoration: underline;
+      }
+      @media screen and (min-width:768px)and (max-width:1023px) {
+        .container{
+            display:grid;
+            grid-template-columns:  2fr 2fr;
+            grid-template-rows: 1fr 1fr auto;
+           grid-template-areas: "main main" "image image" "footer footer";
+        }
+        .img{
+          display:none;
+        }
+        .details{
+          display:none;
+        }
+        .foot_right{
+          
+          grid-area:1/1/3/3;
+        }
+        
+      }
+      @media screen and (min-width:320px) and (max-width:767px) {
+        .container{
+                display:grid;
+                grid-template-columns:2fr 2fr;
+                grid-template-rows: auto 1fr 1fr;
+                grid-template-areas: "footer footer" "main main" " image image";
+            
+            }
+            .img{
+              display:none;
+            }
+            .details{
+              display:none;
+            }
+            .foot_right{
+              grid-area:1/1/2/3;
+            }
+            .footer_container{
+              grid-area:1/1/2/3;
+            }
+            .right{
+              display:grid;
+              grid-area: 2/1/3/3;
+              
+            }
+            
+            .item1{
+              grid-area:1/1/2/2;
+            }
+            .item2{
+              grid-area:2/1/3/3;
+            }
+            .item3{
+              grid-area:3/1/4/4;
+            }
+            .item4{
+              grid-area:4/1/5/5;
+            }
+            .card >h5{
+              display:none;
+            }
+            .left{
+              grid-area:3/1/4/3;
+            }
+
+        }
+          
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="https://sp.yimg.com/ib/th?id=OIP.C7bK6Ddg7sJysLmhXM25AwHaHa&pid=Api&w=148&h=148&c=7&dpr=2&rs=1" alt ="lotus logo">
+          </div>
+          <div class="right">
+                <div class="card item1">
+                    <h3>shop</h3>
+                    <h5>Gift Cards</h5>
+                    <h5>Esty registry</h5>
+                    <h5>Sitemap</h5>
+                    <h5>Esty blog</h5>
+                    <h5>Esty United Kingdom</h5>
+                    <h5>Esty Germany</h5>
+                    <h5>Esty canada</h5>
+                </div>
+                <div class="card item2">
+                    <h3>Sell</h3>
+                    <h5>Sell on Etsy</h5>
+                    <h5>teams</h5>
+                    <h5>Forums</h5>
+                    <h5>Affiliates & Creators</h5>
+                </div>
+                <div class="card item3">
+                    <h3>About</h3>
+                    <h5>Etsy,Inc.</h5>
+                    <h5>Policies</h5>
+                    <h5>Investors</h5>
+                    <h5>Careers</h5>
+                    <h5>press</h5>
+                    <h5>Impact</h5>
+                    <h5>Legal imprint</h5>
+                </div>
+                <div class="card item4">
+                    <h3>Shop</h3>
+                    
+                    <h5>Gift Cards</h5>
+                    <h5>Esty registry</h5>
+                    <h5>Sitemap</h5>
+                    <h5>Esty blog</h5>
+                    <h5>Esty United Kingdom</h5>
+                    <h5>Esty Germany</h5>
+                    <h5>Esty canada</h5>
+                </div>
+          </div>
+        
+      <div  class="footer_container" >
+        <div class="foot_left">
+            <img class="img"src="https://static.vecteezy.com/system/resources/previews/006/552/479/original/india-flag-logo-design-template-illustration-free-vector.jpg" alt="india">
+        
+              <div class="details">
+                  <span>India</span>
+                  <span class="border"></span>
+                  <span>English(IN)</span>
+                  <span class="border"></span>
+                  <span>₹(INR)</span>
+              </div>
+          </div> 
+          <div class="foot_right">
+              <span>© 2024 Esty,Inc.</span>
+            
+                  <span class="link">terms of use</span>
+                  <span class="link">Privacy</span>
+                  <span class="link">Interest-based ads</span>
+                  <span class="link">local shops</span>
+                  <span class="link"> Regions</span>
+              
+          </div>
+      </div>
+    </div>
+    
+</body>
+</html>

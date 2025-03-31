@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries _assignmnet1</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 300px 300px 300px 300px;
+            grid-template-rows: 100px 250px 250px 250px;
+            grid-template-areas: "nav nav nav nav"
+                                  "box1 box2 box3 box4";
+        }
+        .container>div{
+            padding:10px;
+            margin:10px;
+        }
+        .header{
+            background-color:yellow;
+            grid-area:nav;
+        }
+        
+
+        .item1{
+            grid-area:box1;
+            background-color:red;
+            color:grey;
+        }
+        .item2{
+            grid-area:box2;
+            background-color: green;
+            color:grey;
+        }
+        .item3{
+            grid-area: box3;
+            background-color: rgb(75, 75, 160);
+            color:grey;
+        }
+        .item4{
+            grid-area:box4;
+            background-color: blanchedalmond;
+            color:grey;
+        }
+         /* @media screen and (min-width:768px) and (max-width:1023px) {
+           .container{
+            display:grid;
+            grid-template-columns: 300px 300px ;
+            grid-template-rows: 100px 250px 250px;
+            grid-template-areas: "nav nav"
+                                 " box1 box3"
+                                 "box2 box4";
+           }
+         } */
+         /* @media screen and (min-width:320px) and (max-width:767px){
+
+            .container{
+            display:grid;
+            grid-template-columns: 300px  ;
+            grid-template-rows: 100px 250px 250px 250px 250px;
+            grid-template-areas: "nav"
+                                 " box1" "box4"
+                                    "box2" "box3";
+         }
+        } */
+         /* @media screen and (max-width:1024px) {
+            .container{
+            display: grid;
+            grid-template-columns: 300px 300px 300px 300px;
+            grid-template-rows: 100px 250px;
+            grid-template-areas: "nav nav nav nav"
+                                  "box1 box2 box3 box4";
+        }
+         } */
+          @media screen and  (min-width:768px) and (max-width:1023px)  {
+           .container{
+            display:grid;
+            grid-template-columns: 300px 300px;
+            grid-template-rows: 100px 250px 250px;
+           }
+            .header{
+                grid-area: 1/span 2;
+            }
+            .item1{
+                grid-area: 2/1/2/2 ;
+            }
+            .item2{
+                grid-area:3/1/3/2;
+            }
+            .item3{
+                grid-area:2/2/3/3;
+            }
+            .item4{
+                grid-area:3/2/4/3;
+            }
+            
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+       <div class="header">Navigation</div>
+       <div class="item1">Box1</div>
+       <div class="item2">Box2</div>
+       <div class="item3">Box3</div>
+       <div class="item4">box4</div>
+    </div>
+</body>
+</html>

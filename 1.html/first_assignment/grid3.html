@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-areas: "header header header header header header"
+                                  "menu main main main main right"
+                                  "footer footer footer footer footer footer";
+            
+        }
+        .item1{
+            grid-area:header;
+            background-color:purple;
+            text-align: center;
+            color:white;
+        }
+        .item2{
+            grid-area:menu;
+        }
+        .item2 li{
+            color:white;
+            background-color: aqua;
+            padding:8px;
+            margin-bottom:8px;
+        }
+        .tem3{
+            grid-area:main;
+        }
+        .item3>h1{
+           margin-bottom: 7px;;
+        }
+        .item>p{
+            margin-bottom: 7px;
+        }
+        .item4{
+            grid-area:right;
+
+        }
+        .item5{
+          grid-area:footer;
+          background-color: rgba(34, 37, 225, 0.681);
+          color:white;
+          text-align: center;
+        }
+        @media only screen and (max-width: 600px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 6;}
+  .item3 {grid-area: 3 / span 6;}
+  .item4 {grid-area: 4 / span 6;}
+  .item5 {grid-area: 5 / span 6;}
+}
+
+@media only screen and (min-width: 600px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 1;}
+  .item3 {grid-area: 2 / span 4;}
+  .item4 {grid-area: 3 / span 6;}
+  .item5 {grid-area: 4 / span 6;}
+}
+
+@media only screen and (min-width: 768px) {
+  .item1 {grid-area: 1 / span 6;}
+  .item2 {grid-area: 2 / span 1;}
+  .item3 {grid-area: 2 / span 4;}
+  .item4 {grid-area: 2 / span 1;}
+  .item5 {grid-area: 3 / span 6;}
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="'container">
+        <div class="item1">China</div>
+        <div class="item2">
+            <ul>
+                <li>The Flight</li>
+                <li>The city</li>
+                <li>The Island</li>
+                <li>The food</li>
+            </ul>
+        </div>
+        <div class="item3">
+            <h1>The city</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, voluptatum nam quaerat quam odit facilis illum natus iusto iste dolorum ea perferendis voluptate dicta dignissimos libero quisquam neque! Provident, quisquam?</p>
+
+        </div>
+        <div class="item4">
+            <h2>Facts:</h2>
+            <ul>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet iure iusto cupiditate sit amet delectus sequi blanditiis voluptas, officia laborum officiis reprehenderit ea. Autem hic, quam qui quisquam perspiciatis voluptatum?</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias temporibus, delectus eos, cum voluptas beatae consequuntur nihil explicabo corporis illo dignissimos obcaecati dolorum nam accusamus nulla! Quasi fugit sunt cumque.</li>
+            </ul>
+        </div>
+        <div class="item5">
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa atque nesciunt fugit maiores deserunt incidunt, aspernatur error iure sit. Quia tempore ex cum, molestias impedit quidem distinctio velit magnam veritatis?</P>
+        </div>
+        
+    </div>    
+</body>
+</html>
