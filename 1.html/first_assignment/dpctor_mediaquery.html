@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Assignment</title>
+    <style>
+        .container{
+            display:grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,auto);
+            grid-template-areas: "special special special special""header header header header""first first first first""second second second second";
+
+        }
+        .container>h3{
+           grid-area:special;
+            text-align: center;
+        }
+        .container>header{
+            font-size:13px;
+            font-weight: 450;
+            margin-bottom:10px;
+           grid-area:header;
+            text-align: center;
+            
+        }
+        .top_section{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 1fr;
+            gap:10px;
+            grid-area:first;
+
+
+
+        }
+        .card{
+            height:auto;
+            width:280px;
+           background-color:whitesmoke;
+           /* padding:10px;
+           margin:10px; */
+           border-radius:1px; 
+           /* height:350px; */
+          
+        }
+       
+        .img{
+          background-image: url("https://preview.colorlib.com/theme/medino/assets/images/doctor1.jpg.webp");
+          background-size: cover;
+          height:20vh;
+          border-top-left-radius:1px;
+          border-top-right-radius: 1px;
+        }
+        .card>h4,h5,p{
+            text-align: center;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+         }
+         .card>p{
+            font-size:12px;
+            padding:8px;
+         }
+         .card>h4{
+            text-transform: uppercase;
+         }
+         .card>h5{
+            text-transform: capitalize;
+         }
+         .button{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            padding:10px;
+            
+            
+            
+         }
+         #btn1{
+            background-color: whitesmoke;
+            color:aqua;
+             padding:8px;
+            border-radius: 50px;
+
+         }
+         .btn2{
+            background-color: rgb(207, 61, 8);
+            color:white;
+             padding:8px;
+            border-radius:30px;
+            
+         }
+         .bottom_section{
+            display:grid;
+            grid-template-columns:repeat(3,1fr) ;
+            grid-template-rows: repeat(2,1fr);
+            justify-content: space-evenly;
+            justify-content: center;
+            align-content: center;
+            gap:10px;
+            grid-area:second;
+         }
+         .card2>img{
+          margin-left:100px;
+          margin-top: 25px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          
+         }
+         .card2>h5{
+            text-transform: capitalize;
+         }
+        .card2>p{
+            font-size: 12px;
+            padding:5px;
+            margin:5px;
+        }
+        .card2{
+            display:grid;
+            justify-content: center;
+            align-items:center;
+        }
+        @media screen and (min-width: 451px) and (max-width: 750px) {
+            .top_section{
+                display:grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2,1fr);
+            }
+            .bottom_section{
+                display:grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(3,1fr);
+            }
+        }
+        @media screen and (min-width: 100px) and (max-width: 450px) {
+            .top_section{
+                display:grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4,1fr);
+            }
+            .bottom_section{
+                display: grid;
+                grid-template-columns: 1fr ;
+                grid-template-rows: repeat(6,1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Our Specialist </h3>
+        <header>Green above he cattle god and saw day under fill in the cattle fowl a all, living ,tree <br>
+            word link available in the service for subdue fruit. </header>
+    
+    <div class="top_section">
+        
+        <div class="card item1">
+            <div class="img"></div>
+            <h4>Ethel Davis</h4>
+            <h5>Sr.Faculty data science</h5>
+            <P> If you are looking at blank cassettes on the web, you may be very confused at the. </P>
+            <div class="button">
+                <button id="btn1" >Know More</button>
+                <button class="btn2">Book Now</button>
+            </div>
+        </div>
+         <div class="card item2">
+            <div class="img"></div>
+            <h4>Dand Mories</h4>
+            <h5>Sr.Faculty Plastic suregery</h5>
+            <P> If you are looking at blank cassettes on the web, you may be very confused at the. </P>
+            <div class="button">
+                <button id="btn1">Know More</button>
+                <button class="btn2">Book Now</button>
+            </div> 
+        </div> 
+        <div class="card item3">
+            <div class="img"></div>
+            <h4>align board</h4>
+            <h5>Sr.Faculty Plastic surgery</h5>
+            <P> If you are looking at blank cassettes on the web, you may be very confused at the. </P>
+            <div class="button">
+                <button id="btn1">Know More</button>
+                <button class="btn2">Book Now</button>
+            </div>
+        </div>
+        <div class="card item4">
+            <div class="img"></div>
+                <h4>jeson limit</h4>
+                <h5>Sr.Faculty plastic surgery</h5>
+                <P> If you are looking at blank cassettes on the web, you may be very confused at the. </P>
+                <div class="button">
+                    <button id="btn1">Know More</button>
+                    <button class="btn2">Book Now</button>
+                </div>
+        </div>
+    </div>
+    <div class="bottom_section">
+        <div class="card2">
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-04-16/bottom_132437.jpeg">
+            <h5>teeth whitening</h5>
+            <p>In pretium neque a libero congur/ Elit diam<br> lectus. Prasent lacinia vitae sit mattis mollis maximus.</p>
+        </div>
+        <div class="card2 ">
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-04-16/bottom_132437.jpeg">
+            <h5>teeth whitening</h5>
+            <p>In pretium neque a libero congur/ Elit diam <br> lectus. Prasent lacinia vitae sit mattis mollis <br> maximus.</p>
+        </div>
+        <div class="card2 ">
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-04-16/bottom_132437.jpeg">
+            <h5>teeth whitening</h5>
+            <p>In pretium neque a libero congur/ Elit diam <br> lectus. Prasent lacinia vitae sit mattis mollis <br> maximus.</p>
+        </div>
+        <div class="card2 ">
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-04-16/bottom_132437.jpeg">
+            <h5>teeth whitening</h5>
+            <p>In pretium neque a libero congur/ Elit diam  <br>lectus. Prasent lacinia vitae sit mattis mollis <br> maximus.</p>
+        </div>
+        <div class="card2 ">
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-04-16/bottom_132437.jpeg">
+            <h5>teeth whitening</h5>
+            <p>In pretium neque a libero congur/ Elit diam  <br>lectus. Prasent lacinia vitae sit mattis mollis <br> maximus.</p>
+        </div>
+        <div class="card2">
+            <img src="https://masai-course.s3.ap-south-1.amazonaws.com/editor/uploads/2022-04-16/bottom_132437.jpeg">
+            <h5>teeth whitening</h5>
+            <p>In pretium neque a libero congur/ Elit diam <br>lectus. Prasent lacinia vitae sit mattis mollis <br> maximus.</p>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
