@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  id ="firstnum" type="Number" placeholder="Enter1st number" value=""/>
+    <input  id="secondnum"  type="Number" placeholder="Enter 2nd number"value=""/>
+    <button onclick="clickadd()">ADD</button>
+    <button onclick="clicksubtract()">Subtract</button>
+    <button  id="btn1"onclick="clickmultiply()">Multiply</button>
+    <button onclick="clickdivide()">divide</button>
+    <br>
+    <br>
+    <h3 id="output">see your output here</h3>
+</body>
+</html>
+<script>
+    function clickmultiply(){
+       let a=  document. getElementById("firstnum").value;
+       let b=  document.getElementById("secondnum").value;
+        if (a==2 && b==4){
+            let c=a*b;
+            alert(c);
+            
+           
+        }
+        
+           
+    }
+    function clickdivide(){
+        let a=  document. getElementById("firstnum").value;
+       let b=  document.getElementById("secondnum").value;
+       if (a==8 && b==4){
+        let c=a/b;
+       alert(c);
+            
+         }
+    }
+    function  clickadd(){
+        let a=parseInt(document.getElementById("firstnum").value);
+        let b=parseInt(document .getElementById("secondnum").value);
+        let output= a+b;
+        alert(document.getElementById("output").innerText="addition is"+ output);
+        console.log(output);
+    }
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1 id="firstname"> hello</H1>
+    <div id="lastname">FLm</div>
+    <p id="fullname">fullname</p>
+    <hr>
+    <button onclick="selectfirstname()">FirstName</button>
+    <button onclick="selectlastname()">Lastname</button>
+    <button onclick="fullname()">default</button>
+    <button  onclick="reset()"> reset</button>
+</body>
+</html>
+
+<script>
+    function selectfirstname(){
+        document.getElementById("firstname").innerText="Prathyusha";
+    }
+    function selectlastname(){
+        document.getElementById("lastname").innerText="Bandaru";
+    }
+    function fullname(){
+        document.getElementById("fullname").innerText="Prathyusha Bandaru";
+    }
+    function reset(){
+        // document.getElementById("firstname").innerText="";
+        // document.getElementById("lastname").innerText="";
+        // document.getElementById("fullname").innerText="";
+
+        document.getElementById("firstname").innerText="Hello";
+        document.getElementById("lastname").innerText="FLM";
+        document.getElementById("fullname").innerText="Full Name";
+
+    }
+
+
+</script>
