@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let head=document.createElement("h1");
+    head.innerText="i am heading";
+    let body=document.querySelector("body");
+    body.append(head);
+
+    let  box=document.createElement("div");
+    box.innerText="I am container";
+    let div1=document.createElement("div");
+    div1.innerText="iam div 1";
+    let div2=document.createElement("div");
+    div2.innerText=" iam div 2";
+
+    let div3=document.createElement("div");
+    div3.innerText=" iam div 3";
+body.append(box);
+box.append(div1,div2,div3);
+console.log(box,div1,div2,div3);
+
+for (let i=0;i<=10;i++){
+    let heading= document.createElement("h3");
+    heading.innerText="i am heading 3";
+    document.querySelector("body").append(heading);
+
+}
+</script>

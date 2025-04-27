@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add event Listner</h1>
+    <p>Try to clikc on button Try it and see the result</p>
+    <button id ="mybtn">Try it</button>
+    <p id="para"></p>
+
+</body>
+</html>
+
+<script>
+    let btn= document.querySelector("#mybtn");
+    btn.addEventListener("click",trynow);
+    function trynow(){
+        document.querySelector("#para").innerText="Hello this is Add event selector event";
+            }
+</script>
