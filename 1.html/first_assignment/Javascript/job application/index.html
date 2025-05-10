@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="link">
+        <div> <a href="./index.html"> Home</a></div>
+        <div> <a href="./application.html">Applied Jobs</a></div>
+        <div><a href="./bookmark.html">Bookmarks</a></div>
+    </div>
+
+    <!--form filling-->
+    <form  id="form">
+        <h2>Enter your Application details</h2>
+        <input type="text" id="name" placeholder="enter your name">
+        <input type="email"  id="email"placeholder="enter your email">
+        <select name="" id="role">
+            <option value="FSD">FSD</option>
+            <option value="Front end">frontend</option>
+            <option value="Backend">Backend</option>
+        </select>
+        <input type="Number" id="salary" placeholder="enter your salary Expectations">
+        <input type="submit" id="submit"value="submit"/>
+    </form>
+</body>
+</html>
+
+<script>
+    document. addEventListener("submit", jobSubmit);
+    let jobArr;
+    if(localStorage.getItem("jobList")!==null){
+        jobArr= JSON.parse(localStorage.getItem("jobList"));
+    }
+    else{
+        jobArr=[];
+    }
+
+    function jobSubmit(){
+        event.preventDefault();
+        let jobObj={
+            personName:document.querySelector("#name").value,
+            personEmail:form.email.value,
+            personRole:form.role.value,
+            personSalary:form.salary.value
+
+        };
+        // console.log(jobObj);
+
+        jobArr.push(jobObj);
+
+        localStorage.setItem("jobList" ,JSON.stringify(jobArr));
+
+        // <!--when we want to store the data in loacl storage you should always send the data in json format -->
+          window.location.href="application.html"
+
+    }
+</script>
+

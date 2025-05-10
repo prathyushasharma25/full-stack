@@ -1,0 +1,54 @@
+div{
+    display:flex;
+    justify-content: space-around;
+}
+form{
+    margin-top:100px;
+    padding:5px;
+    font-family: Arial, Helvetica, sans-serif; 
+    width:30%;
+    border: 1px solid black;
+}
+label{
+    font-size:20px;
+}
+
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width:60%;
+    border: 1px solid black;
+    margin-top: 100px;
+    text-align: center;
+}
+table td, table th{
+ border: 1px solid black;
+ padding:10px;
+ text-align: center;
+
+}
+table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: aliceblue;
+    /* color:white; */
+    font-weight: bold;;
+}
+
+input[type="text" ],input[type="number"],select{
+    width:80%;
+    padding: 10px;
+    border:1 px solid black;
+    border-radius: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+input[type="submit"]{
+    background-color: bisque;
+    color:white;
+    padding:12px 20px;
+    border-radius: 4px;
+    cursor:pointer;
+    width:100%;
+    font-size: 20px;
+}

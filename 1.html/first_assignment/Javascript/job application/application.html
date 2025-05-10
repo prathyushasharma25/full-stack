@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="link">
+        <div> <a href="./index.html"> Home</a></div>
+        <div> <a href="./application.html">Applied Jobs</a></div>
+        <div><a href="./bookmark.html">Bookmarks</a></div>
+    </div>
+     <main>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Applied Jobs</td>
+                    <td>Salary</td>
+                    <td>Add to Bookmarks</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- data will be coming from javascript-->
+            </tbody>
+        </table>
+     </main>
+</body>
+</html>
+
+<script>
+    let jobArr=JSON.parse(localStorage.getItem("jobList"));
+    let bookMarkArr;
+    // if(localStorage.getItem("bookMarks")!==null){
+    //     bookMarkArr=JSON.parse(localStorage.getItem("bookMarks"));
+    // }
+    // else{
+    //     bookMarkArr=[];
+    // }
+
+    bookMarkArr=JSON.parse(localStorage.getItem("bookMarks"))||[];
+    
+
+   jobArr.forEach(function (elem) {
+
+    let tr=document.createElement("tr");
+    let td1=document.createElement("td");
+    td1.innerText=elem.personName;
+    let td2=document.createElement("td");
+    td2.innerText=elem.personEmail;
+    let td3=document.createElement("td");
+    td3.innerText=elem.personRole;
+
+    let td4=document.createElement("td");
+    td4.innerText=elem.personSalary;
+
+    let td5=document.createElement("td");
+    td5.innerText="bookMarks";
+    td5.addEventListener("click",function(){
+        bookMarks(elem);
+    });
+
+    tr.append(td1,td2,td3,td4,td5);
+
+    document.querySelector("tbody").append(tr);
+
+   });
+
+  
+
+   function bookMarks(elem){
+     bookMarkArr.push(elem);
+    localStorage.setItem("bookMarks",JSON.stringify(bookMarkArr));
+    console.log(bookMarkArr);
+   }
+    
+  
+
+</script>
