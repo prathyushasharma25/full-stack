@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label >enter a Value</label>
+    <input type="number" id="firstNum" placeholder="enter your Number" value=""/>
+    <label > enter b value</label>
+    <input type="number" id="secNum"placeholder="enter your Number"value=""/>
+    <button id="btn_number">Click Here to find the exponent</button>
+
+    <p id="answer"></p>
+
+</body>
+</html>
+
+<script>
+   
+   let myBtn=document.querySelector("#btn_number");
+   myBtn.addEventListener("click",submitAns);
+   let result =1;
+   function submitAns (){
+     let a= document.querySelector("#firstNum").value;
+     
+   let b=document.querySelector("#secNum").value;
+       
+   for(i=0;i<b;i++){
+        result *=a;
+       }
+    //    let output= `${a} ^ ${b} = ${result}`;
+
+            let output= a+ "^"+ b+"="+result;
+       
+       document.querySelector("#answer").innerText=output;
+       alert(output);
+       document.querySelector("#answer").innerText=output;
+       console.log(output);
+   }
+</script>

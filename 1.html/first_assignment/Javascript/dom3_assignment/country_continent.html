@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select  id="continent">
+        <option value="">choose your country </option>
+        <option value="india">india</option>
+        <option value="unitedStatesOfAmerica">united states of america</option>
+        <option value="china">china</option>
+        <option value="nepal">nepal</option>
+        <option value="australia">Australia</option>
+        <option value="france">france</option>
+        <option value="germany">germany</option>
+        <option value="southAfrica">south Africa</option>
+        <option value="nigeria">Nigeria</option>
+        <option value="mexico">Mexico</option>
+        <option value="argentina">Argentina</option>
+        <option value="brazil">Brazil</option>
+        <option value="canada">Canada</option>
+        <option value="singapore">singapore</option>
+        <option value="sweden">Sweden</option>
+    </select>
+
+    <button id="btn_continent">Find Continent</button>
+</body>
+</html>
+
+<script>
+    
+  let myBtn=  document.querySelector("#btn_continent");
+  myBtn.addEventListener("click",findContinent);
+  
+    function findContinent(){
+       
+       let continents= document.querySelector("#continent").value; 
+        switch(continents){
+            case "india":
+                alert("the Continent is ASIA");
+                console.log("the continent is ASIA")
+                break;
+            case "unitedStatesOfAmerica":
+                alert("the continent is North America ");
+                break;
+            case "china":
+                alert("the continent is ASIA");
+                break;
+            case "nepal":alert("the continent is ASIA ");
+                break;
+            case "australia":alert("the Continent is Oceania ");
+                break;
+            case "france":
+                alert("the continent is  Europe");
+                break;
+            case "germany":
+                alert("the continent is  Europe");
+                break;
+            case "southAfrica":
+                alert("the continent is Africa ");
+                break;
+            case "nigeria":
+                alert("the continent is  Africa");
+                break;
+            case "mexico":
+                alert("the continent is North America ");
+                break;
+            case "argentina":
+                alert("the continent is  South America");
+                break;
+            case "brazil":
+                alert("the continent is  SOuth America");
+                break;
+            case "canada":
+                alert("the continent is North America");
+                break;
+            case "singapore":
+                alert("the continent is ASIA ");
+                break;
+            case "sweden":
+                alert("the continent is Europe");
+                break;
+
+            default:
+                alert("please select a Valid country");
+
+        
+    }
+}
+</script>

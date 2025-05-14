@@ -33,6 +33,7 @@
 <script>
     let jobArr=JSON.parse(localStorage.getItem("jobList"));
     let bookMarkArr;
+   
     // if(localStorage.getItem("bookMarks")!==null){
     //     bookMarkArr=JSON.parse(localStorage.getItem("bookMarks"));
     // }
@@ -61,6 +62,10 @@
     td5.addEventListener("click",function(){
         bookMarks(elem);
     });
+        
+    
+      
+    
 
     tr.append(td1,td2,td3,td4,td5);
 
@@ -74,6 +79,7 @@
      bookMarkArr.push(elem);
     localStorage.setItem("bookMarks",JSON.stringify(bookMarkArr));
     console.log(bookMarkArr);
+   alert("BookMark Saved Succesfully, Please check in BookMark Section");
    }
     
   
