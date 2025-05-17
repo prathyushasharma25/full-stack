@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="numberInput" placeholder="Enter a number" />
+<button id="checkBtn">Check Number</button>
+<p id="result"> your Result shows Here</p>
+
+
+
+
+
+<Script>
+  
+  let btnNumber=document.querySelector("#checkBtn");
+  btnNumber.addEventListener("click",evenOdd);
+  function evenOdd(){
+    let Number=document.querySelector("#numberInput").value;
+    if(Number%2==0){
+      document.querySelector("#result").innerText="The Number is Even";
+    }
+    else {
+      document.querySelector("#result").innerText="The Number is Odd";
+    }
+    if(Number===""||isNaN(Number)){
+        document.querySelector("#result").innerText="Please enter the Valid Number";
+    }
+    console.log(typeof null);
+    let x = 5;
+console.log(x++);
+console.log(x);
+console.log(0 == false);
+console.log(0 === false);
+console.log(typeof NaN);
+console.log(typeof undefined);
+console.log(Boolean("false"));
+
+  }
+</Script>
+
+</body>
+</html>

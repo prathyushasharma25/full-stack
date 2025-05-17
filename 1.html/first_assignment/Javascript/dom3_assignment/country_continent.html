@@ -1,3 +1,4 @@
+<!--Below is the code is the updated Version-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,9 +37,89 @@
   
     function findContinent(){
        
+       let country= document.querySelector("#continent").value; 
+       continents="";
+        switch(country){
+            case "india":
+             case   "china":
+             case   "singapore":
+               case "nepal":
+                continents="Asia";
+                break;
+            case "unitedStatesOfAmerica":
+            case "mexico":
+            case "canada":
+            continents="North America";
+                break;
+            case "australia":
+                continents="oceania";
+                break;
+            case "france":
+            case "germany":
+            case "sweden":
+                continents="Europe";
+                break;
+            case "southAfrica":
+            case "nigeria":
+                continents="Africa";
+                break;
+            case "argentina":
+            case "brazil":
+                continents="south AMerica";
+                break;
+            default:
+                alert("please select a Valid country");
+
+        
+    }
+    alert("the continent is "+ continents);
+}
+</script>
+
+
+<!--Below is the code npo the updated version and little complicated and more no of code lines rae present-->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select  id="continent">
+        <option value="">choose your country </option>
+        <option value="india">india</option>
+        <option value="unitedStatesOfAmerica">united states of america</option>
+        <option value="china">china</option>
+        <option value="nepal">nepal</option>
+        <option value="australia">Australia</option>
+        <option value="france">france</option>
+        <option value="germany">germany</option>
+        <option value="southAfrica">south Africa</option>
+        <option value="nigeria">Nigeria</option>
+        <option value="mexico">Mexico</option>
+        <option value="argentina">Argentina</option>
+        <option value="brazil">Brazil</option>
+        <option value="canada">Canada</option>
+        <option value="singapore">singapore</option>
+        <option value="sweden">Sweden</option>
+    </select>
+
+    <button id="btn_continent">Find Continent</button>
+</body>
+</html>
+
+<script>
+    
+  let buttonCountry=  document.querySelector("#btn_continent");
+  buttonCountry.addEventListener("click",findContinent);
+  
+    function findContinent(){
+       
        let continents= document.querySelector("#continent").value; 
         switch(continents){
             case "india":
+                 
                 alert("the Continent is ASIA");
                 console.log("the continent is ASIA")
                 break;
@@ -89,4 +170,7 @@
         
     }
 }
-</script>
+</script> -->
+
+
+
