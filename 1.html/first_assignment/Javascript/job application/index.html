@@ -19,7 +19,7 @@
         <input type="email"  id="email"placeholder="enter your email">
         <select name="" id="role">
             <option value="FSD">FSD</option>
-            <option value="Front end">frontend</option>
+            <option value="Frontend">frontend</option>
             <option value="Backend">Backend</option>
         </select>
         <input type="Number" id="salary" placeholder="enter your salary Expectations">
@@ -27,11 +27,13 @@
     </form>
 </body>
 </html>
-
+<!-- script for form values -->
 <script>
     document. addEventListener("submit", jobSubmit);
-    let jobArr;
-    if(localStorage.getItem("jobList")!==null){
+    let jobArr ;
+// here we are taking the data whenever we enter a new data in job arr it take default new obj in local storage 
+// and the previous data will gone so to avoid this we run a if condition to get the previous data from job arr.
+    if(localStorage.getItem("jobList")!==null){  
         jobArr= JSON.parse(localStorage.getItem("jobList"));
     }
     else{

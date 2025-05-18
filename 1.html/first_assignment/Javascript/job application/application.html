@@ -11,6 +11,34 @@
         <div> <a href="./application.html">Applied Jobs</a></div>
         <div><a href="./bookmark.html">Bookmarks</a></div>
     </div>
+
+    <!-- sort by Name  -->
+      <!-- for select tag if we need to givefunctionality we give on change  -->
+    <select  id="sortNames" onchange="handleNameSort()">
+        <option value="">sort by Name</option>
+        <option value="asc">Ascending</option>
+        <option value="dsc">Descending</option>
+    </select>
+    <!-- sort by salary  -->
+    <select  id="sortSalary" onchange="handleSalarySort()">
+        <option value="">sort by salary</option>
+        <option value="HTL">High to Low</option>
+        <option value="LTH">Low to High</option>
+    </select>
+
+    <!-- sort by role  -->
+
+    <select  id="sortRole" onchange="handleRoleSort()">
+        <option value="">filter category</option>
+        <option value="FSD">FSD</option>
+        <option value="Frontend">FrontENd</option>
+        <option value="Backend">Backend</option>
+    </select>
+
+    <!-- sort by salary -->
+
+
+
      <main>
         <table border="1">
             <thead>
@@ -42,10 +70,118 @@
     // }
 
     bookMarkArr=JSON.parse(localStorage.getItem("bookMarks"))||[];
-    
+        displayData(jobArr);
 
-   jobArr.forEach(function (elem) {
+  
+// writing function for books marks
+   function bookMarks(elem){
+     bookMarkArr.push(elem);
+    localStorage.setItem("bookMarks",JSON.stringify(bookMarkArr));
+    console.log(bookMarkArr);
+   alert("BookMark Saved Succesfully, Please check in BookMark Section");
 
+//    if (!bookMarkArr.some(job => job.personEmail === elem.personEmail)) {
+//     bookMarkArr.push(elem);
+//     localStorage.setItem("bookMarks", JSON.stringify(bookMarkArr));
+//     alert("Bookmarked!");
+// } else {
+//     alert("Already bookmarked");
+// }
+
+   }
+    // logic for Role
+  function handleRoleSort(){
+    let selectedValue=document.getElementById("sortRole").value;
+    console.log(selectedValue);
+    let filteredArray=jobArr.filter(function(element){
+        return element.personRole===selectedValue;
+    });
+console.log(filteredArray);
+//     document.querySelector("tbody").innerHTML="";
+//     filteredArray.forEach(function(elem){
+//     let tr=document.createElement("tr");
+//     let td1=document.createElement("td");
+//     td1.innerText=elem.personName;
+//     let td2=document.createElement("td");
+//     td2.innerText=elem.personEmail;
+//     let td3=document.createElement("td");
+//     td3.innerText=elem.personRole;
+
+//     let td4=document.createElement("td");
+//     td4.innerText=elem.personSalary;
+
+//     let td5=document.createElement("td");
+//     td5.innerText="bookMarks";
+//     td5.addEventListener("click",function(){
+//         bookMarks(elem);
+//     });
+        
+//     tr.append(td1,td2,td3,td4,td5);
+
+//     document.querySelector("tbody").append(tr);
+
+//    });
+
+// insted of calling same code everytime we can like this by below code
+
+displayData(filteredArray);
+  }
+//   logic for salary
+  function handleSalarySort(){
+    let selectedValue= document.querySelector("#sortSalary").value;
+    if(selectedValue==="HTL"){
+        jobArr.sort(function(a,b){
+            return b.personSalary-a.personSalary;
+        });
+        displayData(jobArr);
+    }
+     if (selectedValue==="LTH"){
+        jobArr.sort(function(a,b){
+            return a.personSalary-b.personSalary;
+        });
+        displayData(jobArr);
+    }
+
+  }
+//   logic for Name
+  function handleNameSort(){
+    let selectedValue=document.querySelector("#sortNames").value;
+    if(selectedValue==="asc"){
+        jobArr.sort(function(a,b){
+            let x= a.personName.toUpperCase();
+            let y=b.personName.toUpperCase();
+            if(x >y){
+                return 1;
+            }
+            if (x <y){
+                return -1;
+            }
+            return 0;
+        });
+        displayData(jobArr);
+    }
+    if(selectedValue==="dsc"){
+        jobArr.sort(function(a,b){
+              let x= a.personName.toUpperCase();
+            let y=b.personName.toUpperCase();
+            if(x >y){
+                return -1;
+            }
+            if (x <y){
+                return 1;
+            }
+            return 0;
+            
+        });
+        displayData(jobArr);
+    }
+
+  }
+
+
+  function displayData(data){
+    document.querySelector("tbody").innerHTML="";
+    data.forEach(function(elem){
     let tr=document.createElement("tr");
     let td1=document.createElement("td");
     td1.innerText=elem.personName;
@@ -63,25 +199,11 @@
         bookMarks(elem);
     });
         
-    
-      
-    
-
     tr.append(td1,td2,td3,td4,td5);
 
     document.querySelector("tbody").append(tr);
 
    });
-
-  
-
-   function bookMarks(elem){
-     bookMarkArr.push(elem);
-    localStorage.setItem("bookMarks",JSON.stringify(bookMarkArr));
-    console.log(bookMarkArr);
-   alert("BookMark Saved Succesfully, Please check in BookMark Section");
-   }
-    
-  
+  }
 
 </script>
