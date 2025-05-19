@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            padding:20px;
+            width:300px;
+            height:500px;
+            margin:auto;
+            border-radius:10px;
+            padding:50px;
+            box-shadow: inset 0 0 35px 5px rgba(0,0,0,0.25), inset 0 2px 1px 1px rgba(255,255,255,0.9), inset 0 -2px 1px rgba(0,0,0,0.25);
+        }
+        #display{
+            height:50px;
+            width:90%;
+            background-color: whitesmoke;
+            border-radius: 6px;
+            border: 1px solid black;
+            text-align: center;
+            padding-top: 15px;
+        }
+        #key{
+             display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(4,70px);
+            gap:20px;
+            margin-top: 20px;
+            cursor:pointer;
+        }
+        .number{
+                width:50px;
+                height:50px;
+                background-color: whitesmoke;
+                text-align: center;
+                padding-top: 10px;;
+        }
+        .area{
+            grid-area:4/2/5/3;
+        }
+        #checkButton{
+            width:40%;
+            height:40px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        #resetChange{
+            width:40%;
+            height:40px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+        #clickButton{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+
+        }
+        
+        p{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="display"></div>
+        <div id="key">
+            <h3 class="number">1</h3>
+            <h3 class="number">2</h3>
+            <h3 class="number">3</h3>
+            <h3 class="number">4</h3>
+            <h3 class="number">5</h3>
+            <h3 class="number">6</h3>
+            <h3 class="number">7</h3>
+            <h3 class="number">8</h3>
+            <h3 class="number">9</h3>
+            <h3 class="number area">0</h3>
+        </div>
+        <div id="clickButton"><button id ="checkButton">Check</button>
+        <Button id="resetChange">Reset</Button></div>
+        <p id="result"></p>
+
+          
+    </div>
+</body>
+</html>
+
+<script>
+    let key=document.querySelectorAll("#key h3");
+     bag="";
+     for( let i=0;i<key.length;i++){
+        key[i].addEventListener("click",clickNumber);
+     }
+
+     function clickNumber(){
+        let targetNumber=event.target.innerText;
+        if (targetNumber=="1"||targetNumber=="2"||targetNumber=="3"||targetNumber=="4"||targetNumber=="5"||targetNumber=="6"||targetNumber=="7"||targetNumber=="8"||targetNumber=="9"||targetNumber=="0"){
+            bag=bag+targetNumber;
+            document.querySelector("#display").innerText=bag;
+            console.log(bag);
+        }
+    }
+
+    let checkButton= document.querySelector("#checkButton");
+    checkButton.addEventListener("click",buttonClick);
+    function buttonClick(){
+        let score=parseInt(bag);
+        if(score%2==0){
+            document.querySelector("#result").innerText=score+ " is Even Number";
+            console.log(score+"even");
+        }
+        else{
+            document.querySelector("#result").innerText=score+ " is Odd Number";
+            console.log(score+"odd");
+        }
+
+    
+
+    }
+    let resetChange= document.querySelector("#resetChange");
+    resetChange.addEventListener("click",resetClick);
+
+    function resetClick(){
+        bag="";
+        document.querySelector("#display").innerText="";
+        document.querySelector("#result").innerText="";
+    }
+
+
+
+    
+
+
+     
+</script>
+
