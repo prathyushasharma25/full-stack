@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: black;
+
+        }
+        #container{
+             display:flex;
+             justify-content: space-evenly;
+             align-content: center;
+             gap:20px;
+             margin-top:200px;
+             flex-wrap: wrap;
+             background-color: white;
+             padding:20px;
+             height:auto;
+             width:auto;
+             
+            
+              
+        }
+        .card{7
+            background-color: whitesmoke;
+            height:300px;
+            width:250px;
+           /* border: 1px solid black; */
+           transition: transform 0.2s ease, box-shadow 0.2s ease;
+            
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card>img{
+            height:130px;
+            width:248px;
+        }
+        .card>h3{
+            font-family: 'Times New Roman', Times, serif;
+            margin-left: 10px;
+            font-size: 17px;
+            padding-top: 8px;
+        }
+        .price{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .price>p{
+            font-family: 'Times New Roman', Times, serif;
+
+
+        }
+        .price p:last-child {
+            text-decoration: line-through;
+            color: gray;
+         }
+    </style>
+
+
+</head>
+<body>
+    <div id="container">
+    
+    </div>
+</body>
+</html>
+
+<script>
+
+     let container=document.querySelector("#container");
+      var data = [
+    {
+        imgUrl:"https://i.pinimg.com/originals/de/0c/bf/de0cbf6d1e72dd9f6b0d741819236127.jpg",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://tse3.mm.bing.net/th?id=OIP.sNg09CJbpQ5oqnaTK1jjHgHaMJ&pid=Api&P=0&h=180",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://tse4.mm.bing.net/th?id=OIP.934EiNWS5V_kDAfoIf-1vgHaI4&pid=Api&P=0&h=180",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://tse1.mm.bing.net/th?id=OIP.kVu0voKmnUN5zxuud08tmgHaFr&pid=Api&P=0&h=180",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+]
+    
+
+      for(let i=0; i<data.length;i++){
+          let card=document.createElement("div");
+          card.setAttribute("class", "card");
+          let image=document.createElement("img");
+          image.setAttribute("src",data[i].imgUrl);
+
+          let head=document.createElement("h3");
+          head.innerText=data[i].name;
+          let child_div=document.createElement("div");
+            child_div.setAttribute("class","price");
+             let real_price=document.createElement("p");
+             real_price.innerText=data[i].price;
+             let stricked_price=document.createElement("p");
+             stricked_price.innerText=data[i].strikedOffPrice;
+             child_div.append(real_price,stricked_price);
+             card.append(image,head,child_div);
+             container.append(card);
+             
+
+      }
+
+    
+</script>
