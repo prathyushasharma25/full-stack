@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        #container{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,450px);
+            justify-content: center;
+            align-items: center;
+            gap:5px;
+            padding-left: 20px;
+
+        }
+        .card{
+           background-color: whitesmoke;
+            height:300px;
+            width:250px;
+           /* border: 1px solid black; */
+           transition: transform 0.2s ease, box-shadow 0.2s ease;
+            
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  
+        }
+        .card>img{
+            height:50%;
+            width:249px;
+
+        }
+        .card>h3{
+            padding:10px;
+            margin:10px;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        .price{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .price>p{
+            font-family: 'Times New Roman', Times, serif;
+        }
+         .price >p:last-child{
+            text-decoration: line-through;
+            color: gray;
+         }
+
+        select{
+            text-align: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    
+
+
+    <select  id="category" onchange="handlingCategory()">
+            <option value="">All Products</option>
+            <option value="t-shirt">T-shirts</option>
+            <option value="jeans">Jeans</option>
+            <option value="accessories">Accessoires</option>
+         </select>
+
+         <button onclick="clearFilter()">Clear Filter</button>
+
+    <div id="container">
+        <!-- div=class
+         image tag
+         h3
+         div=secondchild
+         p tag
+         ptag -->
+
+         
+
+    </div>
+</body>
+</html>
+
+<script>
+    let container=document.querySelector("#container");
+    var product = [
+  {
+    imgUrl: "https://tse4.mm.bing.net/th?id=OIP.SAEHv-JSa7p8FJHvMCyBTQHaHa&pid=Api&P=0&h=180",
+    name: "Cool T-Shirt",
+    category: "T-Shirt",
+    price: "$20",
+    strikedOffPrice: "$30"
+  },
+  {
+    imgUrl: "https://tse4.mm.bing.net/th?id=OIP.mQD5mAAqdaAVfHitRShtugHaGh&pid=Api&P=0&h=180",
+    name: "Stylish Jeans",
+    category: "Jeans",
+    price: "$40",
+    strikedOffPrice: "$70"
+  },
+  {
+    imgUrl: "https://tse2.mm.bing.net/th?id=OIP.c6UwIFyAIBW-y293a7j4HQHaJ3&pid=Api&P=0&h=180",
+    name: "Trendy Watch",
+    category: "Accessories",
+    price: "$60",
+    strikedOffPrice: "$90"
+  },
+  {
+        imgUrl:"https://i.pinimg.com/originals/de/0c/bf/de0cbf6d1e72dd9f6b0d741819236127.jpg",
+        name:"LATEST MEN’S SNEAKER",
+        category: "Accessories",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://tse3.mm.bing.net/th?id=OIP.sNg09CJbpQ5oqnaTK1jjHgHaMJ&pid=Api&P=0&h=180",
+        name:"LATEST MEN’S SNEAKER",
+        category: "Jeans",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://tse4.mm.bing.net/th?id=OIP.934EiNWS5V_kDAfoIf-1vgHaI4&pid=Api&P=0&h=180",
+        name:"LATEST MEN’S SNEAKER",
+        category: "Accessories",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://tse1.mm.bing.net/th?id=OIP.kVu0voKmnUN5zxuud08tmgHaFr&pid=Api&P=0&h=180",
+        name:"LATEST MEN’S SNEAKER",
+        category: "Accessories",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+    
+];
+ 
+//  for(let i=0;i<product.length;i++){
+//     let card=document.createElement("div");
+//     card.setAttribute("class","card");
+//     let image=document.createElement("img");
+//     // console.log("image");
+//     image.setAttribute("src",product[i].imgUrl);
+//     image.setAttribute("alt","shopping");
+//     let head=document.createElement("h3");
+//     head.innerText=product[i].name;
+//     let child_div=document.createElement("div");
+//     child_div.setAttribute("class","price");
+//     let real_price=document.createElement("p");
+//     real_price.innerText=product[i].price;
+//     let stricked_price=document.createElement("p");
+//     stricked_price.innerText=product[i].strikedOffPrice;
+//     child_div.append(real_price,stricked_price);
+//     card.append(image,head,child_div);
+//     container.append(card);
+
+
+//  } <!-- we can remove this part as we are calling displayData (product) means it is calling
+//  all the products if we run this for loop again it duplicates)
+
+
+ function displayData(data) {
+    container.innerHTML = ""; // Clear previous cards
+
+    data.forEach(function(item) {
+        let card = document.createElement("div");
+        card.setAttribute("class", "card");
+
+        let image = document.createElement("img");
+        image.setAttribute("src", item.imgUrl);
+        image.setAttribute("alt", "shopping");
+
+        let head = document.createElement("h3");
+        head.innerText = item.name;
+
+        let child_div = document.createElement("div");
+        child_div.setAttribute("class", "price");
+
+        let real_price = document.createElement("p");
+        real_price.innerText = item.price;
+
+        let stricked_price = document.createElement("p");
+        stricked_price.innerText = item.strikedOffPrice;
+
+        child_div.append(real_price, stricked_price);
+        card.append(image, head, child_div);
+        container.append(card);
+    });
+
+    // If no items match
+    if (data.length === 0) {
+        container.innerHTML = "<h2>No products found.</h2>";
+    }
+}
+
+
+ 
+
+
+    function handlingCategory() {
+    let selectedValue = document.querySelector("#category").value.toLowerCase();
+
+        if (selectedValue === "") {
+    displayData(product);
+    return;
+}
+
+ // Filter the products based on category
+    let filteredProducts = product.filter(function(item) {
+        return item.category.toLowerCase() === selectedValue;
+    });
+
+    // Display the filtered data
+    displayData(filteredProducts);
+}
+
+function clearFilter() {
+    document.querySelector("#category").value = ""; // Reset dropdown
+    displayData(product); // Show all products
+}
+
+ 
+
+ displayData(product);
+
+
+
+
+</script>
